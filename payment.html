@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thanh toán - GymPro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" style="margin: 0 auto; max-width: 800px">
+      <header>
+        <h2>Xác nhận & Thanh toán</h2>
+      </header>
+
+      <div style="display: grid; gap: 1.5rem">
+        <!-- Thông tin tóm tắt -->
+        <div class="card" style="border-left: 5px solid var(--primary)">
+          <h3>Thông tin tóm tắt</h3>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-top: 1rem;
+            "
+          >
+            <div>
+              <p><b>Khách hàng:</b> Nguyễn Văn A</p>
+              <p><b>SĐT:</b> 0901 234 567</p>
+            </div>
+            <div style="text-align: right">
+              <p><b>Gói tập:</b> Yoga Zen Premium (6 tháng)</p>
+              <p
+                style="
+                  color: var(--primary);
+                  font-weight: 700;
+                  font-size: 1.2rem;
+                "
+              >
+                Tổng: 2.800.000 VNĐ
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phương thức thanh toán -->
+        <div class="card">
+          <h3>Chọn phương thức thanh toán</h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 1rem;
+              margin: 1.5rem 0;
+            "
+          >
+            <label
+              style="
+                border: 1px solid #e2e8f0;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                text-align: center;
+              "
+            >
+              <input type="radio" name="pay" style="width: auto" /> Tiền mặt
+            </label>
+            <label
+              style="
+                border: 2px solid var(--primary);
+                background: var(--bg-light);
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                text-align: center;
+              "
+            >
+              <input type="radio" name="pay" checked style="width: auto" />
+              Chuyển khoản
+            </label>
+            <label
+              style="
+                border: 1px solid #e2e8f0;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                text-align: center;
+              "
+            >
+              <input type="radio" name="pay" style="width: auto" /> Ví điện tử
+            </label>
+          </div>
+
+          <label
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 0.85rem;
+            "
+          >
+            <input type="checkbox" style="width: auto" required /> Tôi đồng ý
+            với điều khoản sử dụng của GymPro
+          </label>
+
+          <div
+            style="
+              margin-top: 2rem;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <a href="index.html" class="btn btn-outline">Quay lại</a>
+            <a href="invoice.html" class="btn btn-primary"
+              >Xác nhận thanh toán</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

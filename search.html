@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tra cứu gói tập - GymPro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Sidebar tương tự index.html -->
+    <nav class="sidebar">
+      <div class="logo">GymPro</div>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="index.html" class="menu-link">Đăng ký khóa tập</a>
+        </li>
+        <li class="menu-item">
+          <a href="search.html" class="menu-link active">Tra cứu dịch vụ</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <header>
+        <h2>Danh sách gói dịch vụ</h2>
+        <input
+          type="text"
+          placeholder="Tìm kiếm gói tập..."
+          style="width: 300px"
+        />
+      </header>
+
+      <section class="card">
+        <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem">
+          <button class="btn btn-primary">Tất cả</button>
+          <button class="btn btn-outline">Gym</button>
+          <button class="btn btn-outline">Yoga</button>
+          <button class="btn btn-outline">Cardio</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Mã gói</th>
+              <th>Tên gói</th>
+              <th>Môn tập</th>
+              <th>Thời hạn</th>
+              <th>Giá</th>
+              <th>Ưu đãi</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>GYM-01</b></td>
+              <td>Standard Monthly</td>
+              <td>Gym</td>
+              <td>1 Tháng</td>
+              <td>500.000đ</td>
+              <td>Không</td>
+              <td>
+                <a
+                  href="index.html"
+                  class="btn btn-primary"
+                  style="padding: 0.4rem 0.8rem; font-size: 0.8rem"
+                  >Chọn</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><b>YOGA-VIP</b></td>
+              <td>Yoga Zen Premium</td>
+              <td>Yoga</td>
+              <td>6 Tháng</td>
+              <td>2.800.000đ</td>
+              <td>Tặng thảm</td>
+              <td>
+                <a
+                  href="index.html"
+                  class="btn btn-primary"
+                  style="padding: 0.4rem 0.8rem; font-size: 0.8rem"
+                  >Chọn</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
