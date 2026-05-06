@@ -15,8 +15,6 @@
         <li class="menu-item">
           <a href="search.html" class="menu-link">Tra cứu dịch vụ</a>
         </li>
-        <li class="menu-item"><a href="#" class="menu-link">Lịch tập</a></li>
-        <li class="menu-item"><a href="#" class="menu-link">Cài đặt</a></li>
       </ul>
     </nav>
 
@@ -29,7 +27,6 @@
       <section class="card">
         <form action="payment.html">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem">
-            <!-- Thông tin khách hàng -->
             <div class="column">
               <h3 style="margin-bottom: 1.5rem; color: var(--primary)">
                 Thông tin khách hàng
@@ -48,26 +45,25 @@
               </div>
             </div>
 
-            <!-- Thông tin dịch vụ -->
             <div class="column">
               <h3 style="margin-bottom: 1.5rem; color: var(--primary)">
                 Gói tập đăng ký
               </h3>
               <div class="form-group">
                 <label>Chọn môn tập</label>
-                <select>
-                  <option>Gym (Thể hình)</option>
-                  <option>Yoga</option>
-                  <option>Boxing</option>
-                  <option>Pilates</option>
+                <select id="course">
+                  <option value="500000">Gym (Thể hình) - 500k/tháng</option>
+                  <option value="600000">Yoga - 600k/tháng</option>
+                  <option value="800000">Boxing - 800k/tháng</option>
+                  <option value="900000">Pilates - 900k/tháng</option>
                 </select>
               </div>
               <div class="form-group">
                 <label>Gói dịch vụ</label>
-                <select>
-                  <option>Gói Standard (1 tháng)</option>
-                  <option>Gói VIP (6 tháng)</option>
-                  <option>Gói Premium (12 tháng)</option>
+                <select id="package">
+                  <option value="1">Gói Standard (1 tháng)</option>
+                  <option value="6">Gói VIP (6 tháng)</option>
+                  <option value="12">Gói Premium (12 tháng)</option>
                 </select>
               </div>
               <div class="form-group">
@@ -85,7 +81,9 @@
                 <span style="font-size: 0.9rem; color: var(--text-dark)"
                   >Tổng tiền dự tính:</span
                 >
-                <h2 style="color: var(--primary)">1.200.000 VNĐ</h2>
+                <h2 id="total-price" style="color: var(--primary)">
+                  500.000 VNĐ
+                </h2>
               </div>
             </div>
           </div>
@@ -105,5 +103,22 @@
         </form>
       </section>
     </main>
+
+    <script>
+      const courseSelect = document.getElementById("course");
+      const packageSelect = document.getElementById("package");
+      const priceDisplay = document.getElementById("total-price");
+
+      function calculatePrice() {
+        const coursePrice = parseInt(courseSelect.value);
+        const months = parseInt(packageSelect.value);
+        const total = coursePrice * months;
+        priceDisplay.textContent = total.toLocaleString("vi-VN") + " VNĐ";
+      }
+
+      courseSelect.addEventListener("change", calculatePrice);
+      packageSelect.addEventListener("change", calculatePrice);
+      calculatePrice();
+    </script>
   </body>
 </html>

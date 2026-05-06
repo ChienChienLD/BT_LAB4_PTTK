@@ -2,11 +2,10 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Tra cứu gói tập - GymPro</title>
+    <title>Tra cứu dịch vụ - GymPro</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Sidebar tương tự index.html -->
     <nav class="sidebar">
       <div class="logo">GymPro</div>
       <ul class="menu-list">
@@ -21,70 +20,83 @@
 
     <main class="main-content">
       <header>
-        <h2>Danh sách gói dịch vụ</h2>
-        <input
-          type="text"
-          placeholder="Tìm kiếm gói tập..."
-          style="width: 300px"
-        />
+        <h2>Danh sách dịch vụ tại GymPro</h2>
+        <div class="user-info">Chào Nhựt!</div>
       </header>
 
       <section class="card">
-        <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem">
-          <button class="btn btn-primary">Tất cả</button>
-          <button class="btn btn-outline">Gym</button>
-          <button class="btn btn-outline">Yoga</button>
-          <button class="btn btn-outline">Cardio</button>
+        <div class="form-group" style="margin-bottom: 2rem">
+          <label>Nhập tên môn tập để tìm kiếm nhanh:</label>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Ví dụ: Gym, Yoga..."
+            onkeyup="filterServices()"
+          />
         </div>
 
-        <table>
+        <table id="serviceTable">
           <thead>
             <tr>
-              <th>Mã gói</th>
-              <th>Tên gói</th>
-              <th>Môn tập</th>
-              <th>Thời hạn</th>
-              <th>Giá</th>
-              <th>Ưu đãi</th>
-              <th>Hành động</th>
+              <th>Tên môn tập</th>
+              <th>Thời lượng</th>
+              <th>Học phí (VNĐ)</th>
+              <th>Mô tả</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><b>GYM-01</b></td>
-              <td>Standard Monthly</td>
-              <td>Gym</td>
-              <td>1 Tháng</td>
-              <td>500.000đ</td>
-              <td>Không</td>
-              <td>
-                <a
-                  href="index.html"
-                  class="btn btn-primary"
-                  style="padding: 0.4rem 0.8rem; font-size: 0.8rem"
-                  >Chọn</a
-                >
-              </td>
+              <td><strong>Gym (Thể hình)</strong></td>
+              <td>1 tháng / 6 tháng / 12 tháng</td>
+              <td>500.000đ/tháng</td>
+              <td>Phòng tập hiện đại, đầy đủ thiết bị tạ và máy cardio.</td>
             </tr>
             <tr>
-              <td><b>YOGA-VIP</b></td>
-              <td>Yoga Zen Premium</td>
-              <td>Yoga</td>
-              <td>6 Tháng</td>
-              <td>2.800.000đ</td>
-              <td>Tặng thảm</td>
-              <td>
-                <a
-                  href="index.html"
-                  class="btn btn-primary"
-                  style="padding: 0.4rem 0.8rem; font-size: 0.8rem"
-                  >Chọn</a
-                >
-              </td>
+              <td><strong>Yoga</strong></td>
+              <td>Thứ 2 - 4 - 6 hoặc 3 - 5 - 7</td>
+              <td>600.000đ/tháng</td>
+              <td>Giúp cải thiện sự dẻo dai và giảm căng thẳng.</td>
+            </tr>
+            <tr>
+              <td><strong>Boxing</strong></td>
+              <td>1 kèm 1 hoặc theo lớp</td>
+              <td>800.000đ/tháng</td>
+              <td>Rèn luyện thể lực và kỹ năng tự vệ mạnh mẽ.</td>
+            </tr>
+            <tr>
+              <td><strong>Pilates</strong></td>
+              <td>Gói cơ bản và nâng cao</td>
+              <td>900.000đ/tháng</td>
+              <td>Tập trung vào sức mạnh cốt lõi và vóc dáng.</td>
             </tr>
           </tbody>
         </table>
       </section>
+
+      <div style="margin-top: 2rem">
+        <a href="index.html" class="btn btn-primary">Quay lại Đăng ký</a>
+      </div>
     </main>
+
+    <script>
+      function filterServices() {
+        const input = document.getElementById("searchInput");
+        const filter = input.value.toUpperCase();
+        const table = document.getElementById("serviceTable");
+        const tr = table.getElementsByTagName("tr");
+
+        for (let i = 1; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            let txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
   </body>
 </html>
